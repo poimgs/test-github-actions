@@ -14,19 +14,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup GCP Service Account
-      uses: google-github-actions/setup-gcloud@v0
-      with:
-        version: "latest"
-        service_account_email: ${{ secrets.GCP_SA_EMAIL }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        export_default_credentials: true
-
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
       run: terraform init
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Terraform Format
       run: terraform fmt -check
@@ -37,12 +31,18 @@ jobs:
     - name: Terraform Plan
       # if: github.event_name == 'pull_request'
       run: terraform plan
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Get IP address
       run: |
         terraform output
         echo hello world
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
