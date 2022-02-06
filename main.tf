@@ -1,3 +1,20 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "3.5.0"
+    }
+  }
+
+  cloud {
+    organization = "poimgs"
+
+    workspaces {
+      name = "test-github-actions-and-terraform"
+    }
+  }
+}
+
 provider "google" {
   project = "learn-terraform-337209"
   region  = "asia-southeast1"
