@@ -46,3 +46,4 @@ jobs:
       run: |
         terraform output
         echo hello world
+        echo wonder if this still works
