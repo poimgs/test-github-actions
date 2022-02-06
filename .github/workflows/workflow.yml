@@ -43,4 +43,6 @@ jobs:
       run: terraform apply -auto-approve
 
     - name: Get IP address
-      run: terraform output
+      run: |
+        terraform output
+        echo hello world
