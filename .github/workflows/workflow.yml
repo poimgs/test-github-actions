@@ -47,7 +47,3 @@ jobs:
     - name: Get IP address
       run: |
         terraform output
-        echo hello world
-        echo wonder if this still works
-        echo third time charm thing!
-        echo ok maybe four times
