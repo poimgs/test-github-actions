@@ -18,12 +18,12 @@ jobs:
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
       with:
         version: "latest"
-
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
         service_account_email: ${{ secrets.GCP_SA_EMAIL }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
       run: terraform init
