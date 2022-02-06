@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 jobs:
-  test_github_actions
-    name: test
+  test_github_actions:
+    name: "test github actions"
     runs-on: ubuntu-latest
 
     steps:
