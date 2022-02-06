@@ -4,7 +4,7 @@ learn-terraform-337209-bb651da8f4c0.json
 **/.terraform/*
 
 # .tfstate files
-*.tfstate
+# *.tfstate
 *.tfstate.*
 
 # Crash log files
