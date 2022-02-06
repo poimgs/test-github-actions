@@ -1,6 +1,7 @@
 provider "google" {
   project = "learn-terraform-337209"
   region  = "asia-southeast1"
+  zone    = "asia-southeast1-c"
 }
 
 resource "google_compute_instance" "vm_instance" {

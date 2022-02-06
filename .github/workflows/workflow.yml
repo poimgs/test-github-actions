@@ -35,7 +35,7 @@ jobs:
       run: terraform validate -no-color
 
     - name: Terraform Plan
-      if: github.event_name == 'pull_request'
+      # if: github.event_name == 'pull_request'
       run: terraform plan
 
     - name: Terraform Apply
