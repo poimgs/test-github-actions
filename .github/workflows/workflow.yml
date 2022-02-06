@@ -47,3 +47,4 @@ jobs:
     - name: Get IP address
       run: |
         terraform output
+        echo does it REALLY work?
