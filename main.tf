@@ -21,7 +21,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "updated-terraform-instance"
   machine_type = "f1-micro"
 
   boot_disk {
